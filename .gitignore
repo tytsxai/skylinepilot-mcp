@@ -45,3 +45,14 @@ dashboard.log
 .coverage
 htmlcov/
 .pytest_cache/
+
+# 备份文件
+*.backup
+*.original
+
+# 代码保护/混淆脚本（开发临时文件）
+*protected*.py
+*protect*.py
+obfuscate.py
+protected/
+github_upload/
