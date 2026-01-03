@@ -520,7 +520,14 @@
                                 <p>{{ proxy.host }}:{{ proxy.port }}</p>
                                 <p style="font-size: 12px; color: #999;">
                                     <span v-if="proxy.username">用户名: {{ proxy.username }}</span>
-                                    <span v-if="proxy.password" style="margin-left: 10px;">密码: ••••••</span>
+                                    <span v-if="proxy.password" style="margin-left: 10px;">
+                                        密码:
+                                        <span v-if="proxyPasswordVisible[proxy.proxy_id]">{{ proxy.password }}</span>
+                                        <span v-else style="cursor: pointer;" @click="toggleProxyPassword(proxy.proxy_id)">••••••</span>
+                                        <span style="cursor: pointer; margin-left: 5px; color: #3498db;" @click="toggleProxyPassword(proxy.proxy_id)">
+                                            {{ proxyPasswordVisible[proxy.proxy_id] ? '👁️' : '👁️‍🗨️' }}
+                                        </span>
+                                    </span>
                                     <span v-if="!proxy.username && !proxy.password" style="color: #27ae60;">无认证</span>
                                 </p>
                             </div>
@@ -1069,6 +1076,7 @@
                     topAccounts: [],
                     testing: false,
                     logs: [],
+                    proxyPasswordVisible: {},  // 代理密码显示状态
 
                     // Login Modal (QR + Phone)
                     showQrModal: false,
@@ -1777,6 +1785,11 @@
                     } catch (e) {
                         this.showToast('测试失败', true)
                     }
+                },
+
+                toggleProxyPassword(proxyId) {
+                    // 切换代理密码显示状态，使用 Vue.set 确保响应式更新
+                    this.$set(this.proxyPasswordVisible, proxyId, !this.proxyPasswordVisible[proxyId])
                 },
 
                 // Templates
