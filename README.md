@@ -641,30 +641,9 @@ in the Software without restriction...
 
 ## 👥 贡献者
 
-感谢以下人员对本项目的贡献：
+感谢所有为本项目做出贡献的人！
 
-<table>
-<tr>
-<td align="center">
-<a href="https://github.com/you922">
-<img src="https://avatars.githubusercontent.com/u/164377181?v=4" width="80px;" alt="you922"/>
-<br />
-<sub><b>you922</b></sub>
-</a>
-<br />
-💻 项目发起者
-</td>
-<td align="center">
-<a href="https://claude.ai/code">
-<img src="https://img.icons8.com/color/80/000000/claude.png" width="80px;" alt="Claude Code"/>
-<br />
-<sub><b>Claude Code</b></sub>
-</a>
-<br />
-🤖 AI 开发助手
-</td>
-</tr>
-</table>
+<!-- ![Contributors](https://contrib.rocks/image?repo=you922/telegram-mcp) -->
 
 ---
 
