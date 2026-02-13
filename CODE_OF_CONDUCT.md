@@ -36,7 +36,7 @@
 
 ## 执行
 
-可以通过 [发送邮件给项目团队](mailto:your-email@example.com) 向项目团队举报滥用、骚扰或其他不可接受的行为。所有投诉都将被审查和调查，并将产生被认为必要和适合情况的回应。项目团队有对事件的报告者保密的义务。具体执行政策的更多细节可能会单独发布。
+可以通过 [GitHub Issues](https://github.com/tytsxai/skylinepilot-mcp/issues) 向项目团队举报滥用、骚扰或其他不可接受的行为。涉及敏感信息时，请使用 [GitHub 私密安全通道](https://github.com/tytsxai/skylinepilot-mcp/security/advisories/new)。所有投诉都将被审查和调查，并将产生被认为必要和适合情况的回应。项目团队有对事件的报告者保密的义务。具体执行政策的更多细节可能会单独发布。
 
 不善意遵守或执行行为准则的项目维护者可能面临项目领导其他成员确定的临时或永久后果。
 

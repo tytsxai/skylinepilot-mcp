@@ -283,7 +283,7 @@ jobs:
 
 1. **推送到 GitHub**
    ```bash
-   git remote add origin https://github.com/yourusername/skylinepilot-mcp.git
+   git remote add origin https://github.com/tytsxai/skylinepilot-mcp.git
    git push -u origin main
    ```
 

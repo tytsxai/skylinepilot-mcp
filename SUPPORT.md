@@ -17,7 +17,7 @@
 
 ### GitHub Discussions
 
-对于使用问题、功能讨论和一般疑问，请使用 [GitHub Discussions](https://github.com/yourusername/skylinepilot-mcp/discussions)：
+对于使用问题、功能讨论和一般疑问，请使用 [GitHub Discussions](https://github.com/tytsxai/skylinepilot-mcp/discussions)：
 
 - **使用问题** - 如何使用某个功能
 - **功能讨论** - 讨论新功能想法
@@ -25,10 +25,10 @@
 
 ### GitHub Issues
 
-对于 Bug 报告和具体的功能请求，请使用 [GitHub Issues](https://github.com/yourusername/skylinepilot-mcp/issues)：
+对于 Bug 报告和具体的功能请求，请使用 [GitHub Issues](https://github.com/tytsxai/skylinepilot-mcp/issues)：
 
-- 🐛 [报告 Bug](https://github.com/yourusername/skylinepilot-mcp/issues/new?template=bug_report.md)
-- ✨ [功能请求](https://github.com/yourusername/skylinepilot-mcp/issues/new?template=feature_request.md)
+- 🐛 [报告 Bug](https://github.com/tytsxai/skylinepilot-mcp/issues/new?template=bug_report.md)
+- ✨ [功能请求](https://github.com/tytsxai/skylinepilot-mcp/issues/new?template=feature_request.md)
 
 ---
 
@@ -173,7 +173,7 @@ DASHBOARD_HOST=0.0.0.0
 ### 社交媒体
 
 关注我们的更新：
-- GitHub: [https://github.com/yourusername/skylinepilot-mcp](https://github.com/yourusername/skylinepilot-mcp)
+- GitHub: [https://github.com/tytsxai/skylinepilot-mcp](https://github.com/tytsxai/skylinepilot-mcp)
 
 ---
 
@@ -189,11 +189,13 @@ DASHBOARD_HOST=0.0.0.0
 
 ### 商业咨询
 
-如需商业支持或定制开发，请发送邮件至：[your-email@example.com](mailto:your-email@example.com)
+如需商业支持或定制开发，请在仓库中提交 Issue 并标记 `business` 标签：
+- [https://github.com/tytsxai/skylinepilot-mcp/issues](https://github.com/tytsxai/skylinepilot-mcp/issues)
 
 ### 安全问题
 
-如发现安全漏洞，请直接发送邮件至：[security@example.com](mailto:security@example.com)
+如发现安全漏洞，请优先通过 GitHub 私密安全通道提交：
+- [https://github.com/tytsxai/skylinepilot-mcp/security/advisories/new](https://github.com/tytsxai/skylinepilot-mcp/security/advisories/new)
 
 **请不要**公开报告安全问题。
 

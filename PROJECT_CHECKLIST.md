@@ -339,7 +339,7 @@ Docs:
 - Bug fixes and verification reports"
 
 # 4. 添加远程仓库
-git remote add origin https://github.com/yourusername/skylinepilot-mcp.git
+git remote add origin https://github.com/tytsxai/skylinepilot-mcp.git
 
 # 5. 推送
 git push -u origin main

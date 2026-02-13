@@ -151,6 +151,14 @@ MCP/Web Request
 
 ## 5) 本次文档变更记录
 
+- 更新：文档质量巡检（2026-02-13）
+  - 统一仓库链接占位符：`yourusername` -> `tytsxai`
+  - 修复 `SUPPORT.md` 的失效文档引用与联系方式占位符
+  - 同步 `CONTRIBUTING.md` / `CODE_OF_CONDUCT.md` / `PROJECT_CHECKLIST.md` 的外链准确性
+- 新增：`growth_docs/TOOLS.md`
+  - 建立 MCP 工具清单导航页，提供工具规模快照与自动提取命令
+- 新增：`CHANGELOG.md`
+  - 建立仓库更新记录入口，记录文档治理与后续版本变更
 - 新增：`growth_docs/PROJECT_REBUILD_BLUEPRINT.md`
   - 输出“核心功能不变”的全面改造蓝图
   - 包含命名升级、风格统一、架构重组、分阶段迁移、验收标准
