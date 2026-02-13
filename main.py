@@ -23,6 +23,21 @@ from telethon.tl.types import (
     ChannelParticipantsAdmins, ChannelParticipantsKicked,
     InputChatPhotoEmpty,
 )
+from src.skylinepilot.interfaces.mcp.tools.contact_service import (
+    run_get_contacts,
+    run_search_contacts,
+    run_add_contact,
+    run_delete_contact,
+    run_block_user,
+    run_unblock_user,
+)
+from src.skylinepilot.interfaces.mcp.tools.profile_service import (
+    run_get_me,
+    run_get_user_status,
+    run_update_profile,
+    run_mute_chat,
+    run_unmute_chat,
+)
 
 load_dotenv()
 
@@ -30,12 +45,13 @@ load_dotenv()
 API_ID = int(os.getenv("TELEGRAM_API_ID", "2040"))
 API_HASH = os.getenv("TELEGRAM_API_HASH", "b18441a1ff607e10a989891a5462e627")
 SESSION_FILE = os.getenv("SESSION_FILE", ".telegram_session")
+MCP_SERVER_NAME = os.getenv("MCP_SERVER_NAME", "skylinepilot-core")
 
 # 允许嵌套事件循环
 nest_asyncio.apply()
 
 # 创建 MCP 服务器
-mcp = FastMCP("telegram-complete")
+mcp = FastMCP(MCP_SERVER_NAME)
 
 # 全局 client
 client: Optional[TelegramClient] = None
@@ -100,7 +116,7 @@ async def get_client() -> TelegramClient:
 
     # 优先从账号管理系统加载 session
     session_string = None
-    accounts_config = "./accounts/config.json"
+    accounts_config = "./runtime_data/config.json"
     
     if os.path.exists(accounts_config):
         try:
@@ -122,7 +138,7 @@ async def get_client() -> TelegramClient:
     if not session_string:
         raise ValueError(
             "未找到 Telegram session。请先运行登录:\n"
-            "  访问 http://localhost:8080/static/dashboard.html 添加账号\n"
+            "  访问 http://localhost:8080/console/dashboard.html 添加账号\n"
             "  或运行 python web_login.py"
         )
 
@@ -593,20 +609,7 @@ async def get_contacts() -> str:
     """获取所有联系人"""
     try:
         c = await get_client()
-        result = await c(functions.contacts.GetContactsRequest(hash=0))
-
-        if not result.users:
-            return "没有联系人"
-
-        lines = []
-        for user in result.users:
-            name = f"{getattr(user, 'first_name', '')} {getattr(user, 'last_name', '')}".strip()
-            username = f" @{user.username}" if getattr(user, "username", None) else ""
-            phone = getattr(user, "phone", None)
-            phone_str = f" | {phone}" if phone else ""
-            lines.append(f"👤 {name}{username} (ID: {user.id}){phone_str}")
-
-        return "\n".join(lines)
+        return await run_get_contacts(c)
     except Exception as e:
         return log_and_format_error("get_contacts", e)
 
@@ -620,20 +623,7 @@ async def search_contacts(query: str) -> str:
     """
     try:
         c = await get_client()
-        result = await c(functions.contacts.SearchRequest(q=query, limit=50))
-
-        if not result.users:
-            return f"未找到匹配 '{query}' 的联系人"
-
-        lines = []
-        for user in result.users:
-            name = f"{getattr(user, 'first_name', '')} {getattr(user, 'last_name', '')}".strip()
-            username = f" @{user.username}" if getattr(user, "username", None) else ""
-            phone = getattr(user, "phone", None)
-            phone_str = f" | {phone}" if phone else ""
-            lines.append(f"👤 {name}{username} (ID: {user.id}){phone_str}")
-
-        return "\n".join(lines)
+        return await run_search_contacts(c, query=query, limit=50)
     except Exception as e:
         return log_and_format_error("search_contacts", e, query=query)
 
@@ -653,21 +643,7 @@ async def add_contact(
     """
     try:
         c = await get_client()
-        from telethon.tl.types import InputPhoneContact
-
-        result = await c(functions.contacts.ImportContactsRequest(
-            contacts=[InputPhoneContact(
-                client_id=0,
-                phone=phone,
-                first_name=first_name,
-                last_name=last_name
-            )]
-        ))
-
-        if result.imported:
-            return f"✅ 已添加联系人: {first_name} {last_name}"
-        else:
-            return f"联系人未添加，可能已存在"
+        return await run_add_contact(c, phone=phone, first_name=first_name, last_name=last_name)
     except Exception as e:
         return log_and_format_error("add_contact", e, phone=phone)
 
@@ -681,9 +657,7 @@ async def delete_contact(user_id: Union[int, str]) -> str:
     """
     try:
         c = await get_client()
-        user = await c.get_entity(user_id)
-        await c(functions.contacts.DeleteContactsRequest(id=[user]))
-        return f"✅ 已删除联系人 {user_id}"
+        return await run_delete_contact(c, user_id=user_id)
     except Exception as e:
         return log_and_format_error("delete_contact", e, user_id=user_id)
 
@@ -697,9 +671,7 @@ async def block_user(user_id: Union[int, str]) -> str:
     """
     try:
         c = await get_client()
-        user = await c.get_entity(user_id)
-        await c(functions.contacts.BlockRequest(id=user))
-        return f"✅ 已拉黑 {user_id}"
+        return await run_block_user(c, user_id=user_id)
     except Exception as e:
         return log_and_format_error("block_user", e, user_id=user_id)
 
@@ -713,9 +685,7 @@ async def unblock_user(user_id: Union[int, str]) -> str:
     """
     try:
         c = await get_client()
-        user = await c.get_entity(user_id)
-        await c(functions.contacts.UnblockRequest(id=user))
-        return f"✅ 已解除拉黑 {user_id}"
+        return await run_unblock_user(c, user_id=user_id)
     except Exception as e:
         return log_and_format_error("unblock_user", e, user_id=user_id)
 
@@ -1029,24 +999,7 @@ async def get_me() -> str:
     """获取你自己的账号信息"""
     try:
         c = await get_client()
-        me = await c.get_me()
-
-        name = f"{me.first_name or ''} {me.last_name or ''}".strip()
-        lines = [
-            f"📱 你的信息:",
-            f"ID: {me.id}",
-            f"名称: {name}",
-        ]
-
-        if me.username:
-            lines.append(f"用户名: @{me.username}")
-        if me.phone:
-            lines.append(f"手机: {me.phone}")
-        lines.append(f"是机器人: {'是' if me.bot else '否'}")
-        lines.append(f"已验证: {'是' if getattr(me, 'verified', False) else '否'}")
-        lines.append(f"高级版: {'是' if getattr(me, 'premium', False) else '否'}")
-
-        return "\n".join(lines)
+        return await run_get_me(c)
     except Exception as e:
         return log_and_format_error("get_me", e)
 
@@ -1066,12 +1019,7 @@ async def update_profile(
     """
     try:
         c = await get_client()
-        await c(functions.account.UpdateProfileRequest(
-            first_name=first_name,
-            last_name=last_name,
-            about=about
-        ))
-        return "✅ 个人资料已更新"
+        return await run_update_profile(c, first_name=first_name, last_name=last_name, about=about)
     except Exception as e:
         return log_and_format_error("update_profile", e)
 
@@ -1085,23 +1033,7 @@ async def get_user_status(user_id: Union[int, str]) -> str:
     """
     try:
         c = await get_client()
-        user = await c.get_entity(user_id)
-
-        if hasattr(user, 'status') and user.status:
-            status = user.status
-            if hasattr(status, 'was_online'):
-                last_seen = status.was_online.strftime("%Y-%m-%d %H:%M:%S")
-                return f"👤 用户上次在线: {last_seen}"
-            elif isinstance(status, type(user.status)) and status.__class__.__name__ == 'UserStatusOnline':
-                return "🟢 用户当前在线"
-            elif isinstance(status, type(user.status)) and status.__class__.__name__ == 'UserStatusOffline':
-                return "🔴 用户离线"
-            elif isinstance(status, type(user.status)) and status.__class__.__name__ == 'UserStatusRecently':
-                return "🟡 用户最近在线"
-            else:
-                return f"状态: {status}"
-
-        return "无法获取用户状态"
+        return await run_get_user_status(c, user_id=user_id)
     except Exception as e:
         return log_and_format_error("get_user_status", e, user_id=user_id)
 
@@ -1119,14 +1051,7 @@ async def mute_chat(chat_id: Union[int, str]) -> str:
     """
     try:
         c = await get_client()
-        from telethon.tl.types import InputPeerNotifySettings
-
-        peer = await c.get_entity(chat_id)
-        await c(functions.account.UpdateNotifySettingsRequest(
-            peer=peer,
-            settings=InputPeerNotifySettings(mute_until=2**31 - 1)
-        ))
-        return f"✅ {chat_id} 已静音"
+        return await run_mute_chat(c, chat_id=chat_id)
     except Exception as e:
         return log_and_format_error("mute_chat", e, chat_id=chat_id)
 
@@ -1140,14 +1065,7 @@ async def unmute_chat(chat_id: Union[int, str]) -> str:
     """
     try:
         c = await get_client()
-        from telethon.tl.types import InputPeerNotifySettings
-
-        peer = await c.get_entity(chat_id)
-        await c(functions.account.UpdateNotifySettingsRequest(
-            peer=peer,
-            settings=InputPeerNotifySettings(mute_until=0)
-        ))
-        return f"✅ {chat_id} 已取消静音"
+        return await run_unmute_chat(c, chat_id=chat_id)
     except Exception as e:
         return log_and_format_error("unmute_chat", e, chat_id=chat_id)
 
