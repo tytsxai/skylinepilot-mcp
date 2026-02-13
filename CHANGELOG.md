@@ -6,6 +6,8 @@
 
 ### Added
 - 新增 `growth_docs/TOOLS.md`，补齐 MCP 工具文档入口。
+- 新增 `growth_docs/DOCS_INDEX.md`，建立文档统一导航入口。
+- 新增 `growth_docs/DOCS_SEARCH_QUALITY_AUDIT.md`，沉淀字数/结构/可搜索性审计结果与巡检命令。
 
 ### Changed
 - 文档巡检并修复占位符链接（`yourusername` -> `tytsxai`）。
@@ -17,6 +19,7 @@
 - `tests/conftest.py` 增补防复发注释，固化测试导入路径约束。
 - `pytest.ini` 增补分层测试收敛说明，防止 legacy 脚本误收集。
 - `README.md` 新增“新人维护必跑检查”命令，统一本地回归流程。
+- `README.md` 补充文档索引入口与中英文关键词，增强搜索发现能力。
 - `BUGFIXES.md` 新增“防复发维护清单”，沉淀字段兼容与观测性约束。
 
 ## [1.0.0] - 2026-01-02

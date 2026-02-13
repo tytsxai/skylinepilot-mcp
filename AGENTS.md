@@ -152,6 +152,12 @@ MCP/Web Request
 
 ## 5) 本次文档变更记录
 
+- 新增：`growth_docs/DOCS_INDEX.md`
+  - 建立开源文档统一导航入口，提升新人定位效率与搜索引擎抓取语义清晰度
+- 新增：`growth_docs/DOCS_SEARCH_QUALITY_AUDIT.md`
+  - 输出文档字数与结构质量审计结论，沉淀搜索优化与防复发巡检规则
+- 更新：`README.md`
+  - 修复标题层级噪音，新增文档导航入口与中英文关键词区块，提升可搜索性
 - 更新：`tests/conftest.py` / `pytest.ini` / `README.md` / `BUGFIXES.md`
   - 补充“防复发”说明与新人维护指引，明确测试导入路径、字段兼容、日志监控接入等关键约束
   - 增加一键自检命令，降低 `ModuleNotFoundError` 与参数错位问题重复出现概率

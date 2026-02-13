@@ -103,7 +103,7 @@
 
 ## 文案系统与转化策略
 
-## 文案三层模型（建议直接套用）
+### 文案三层模型（建议直接套用）
 
 1. **开场钩子（Hook）**：3 秒内建立相关性
 2. **价值表达（Value）**：用 1-2 个明确收益点打动用户
@@ -230,6 +230,15 @@ python -m py_compile main.py dashboard.py marketing_engine.py
 - 品牌风格指南：`growth_docs/BRAND_STYLE_GUIDE.md`
 - 营销增长手册：`growth_docs/MARKETING_GROWTH_PLAYBOOK.md`
 - 架构镜像：`AGENTS.md`
+- 文档导航索引：`growth_docs/DOCS_INDEX.md`
+- 文档质量与搜索审计：`growth_docs/DOCS_SEARCH_QUALITY_AUDIT.md`
+
+## 搜索关键词（SEO / GitHub Discoverability）
+
+为提升 GitHub 与搜索引擎可发现性，建议在项目介绍、Issue、Release 中复用以下关键词：
+
+- 中文关键词：`Telegram 自动化`、`多账号管理`、`MCP 工具`、`批量消息`、`定时任务`、`运营增长`
+- English keywords: `telegram automation`, `multi-account`, `model context protocol`, `mcp server`, `bulk messaging`, `fastapi dashboard`, `telethon`
 
 ---
 
