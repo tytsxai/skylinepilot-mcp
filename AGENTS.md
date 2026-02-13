@@ -152,6 +152,9 @@ MCP/Web Request
 
 ## 5) 本次文档变更记录
 
+- 更新：`tests/conftest.py` / `pytest.ini` / `README.md` / `BUGFIXES.md`
+  - 补充“防复发”说明与新人维护指引，明确测试导入路径、字段兼容、日志监控接入等关键约束
+  - 增加一键自检命令，降低 `ModuleNotFoundError` 与参数错位问题重复出现概率
 - 新增：`tests/conftest.py`
   - 统一 pytest 导入路径引导，修复 `ModuleNotFoundError: src / marketing_engine` 的测试收集失败
 - 更新：文档质量巡检（2026-02-13）

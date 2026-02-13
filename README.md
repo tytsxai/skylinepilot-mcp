@@ -151,6 +151,25 @@ python dashboard.py
 
 - `http://localhost:8080/console/dashboard.html`
 
+### 新人维护必跑检查（防复发）
+
+> 这一步建议在每次修改后都执行，避免“修 A 坏 B”的回归。
+
+```bash
+# 安装开发依赖（包含 pytest）
+pip install -r requirements-dev.txt
+
+# 运行分层测试
+python -m pytest -q
+
+# 语法编译检查（快速发现低级错误）
+python -m py_compile main.py dashboard.py marketing_engine.py
+```
+
+若遇到 `ModuleNotFoundError: src / marketing_engine`，优先检查：
+- `tests/conftest.py` 是否仍存在且路径注入逻辑未被破坏
+- `pytest.ini` 是否仍收敛到 `tests/` 目录
+
 ### MCP 接入（Claude / 其他支持 MCP 的客户端）
 
 ```json

@@ -175,3 +175,41 @@ python3 dashboard.py
 - 账号列表
 - 健康报告
 - 统计摘要
+
+---
+
+## 防复发维护清单（给新人）
+
+> 目标：把“修过一次又坏掉”的问题，变成“默认不会再发生”。
+
+### 1) 测试导入问题（`ModuleNotFoundError`）如何避免
+
+- 所有测试统一放在 `tests/` 分层目录下。
+- 不要在测试文件里手动改 `sys.path`；统一通过 `tests/conftest.py` 维护路径引导。
+- 执行测试前先安装开发依赖：
+
+```bash
+pip install -r requirements-dev.txt
+python -m pytest -q
+```
+
+### 2) 前后端字段错位如何避免
+
+- API 返回涉及历史兼容字段时，必须保留双字段：
+  - 模板：`id` + `template_id`
+  - 定时任务：`id` + `schedule_id`，`last_run` + `lastRun`
+  - 账号列表：`accounts` + `account_ids`
+  - 日志时间：`time` + `timestamp`
+- 修改序列化字段前，先在 `BUGFIXES.md` 和 `AGENTS.md` 记录兼容策略。
+
+### 3) 路由与服务参数错位如何避免
+
+- 接口层参数改名时，先在 service/manager 层保留兼容别名，再逐步清理。
+- 新增/修改 API 参数时，必须同步补一个最小测试（单测或集成测均可）。
+
+### 4) 日志与监控漏接如何避免
+
+- 新增“有业务副作用”的接口时，至少补两件事：
+  1. `log_manager.add_log(...)`
+  2. `stats_tracker.record_use(...)`（如果是用户动作入口）
+- 服务启动链路变更时，确认健康监控的启动/停止钩子仍在生命周期里。
