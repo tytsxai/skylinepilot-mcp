@@ -90,6 +90,12 @@
     - 新增 `pytest.ini`，默认只收集 `tests/` 分层测试
     - 避免 legacy 手工脚本（根目录 `test_*.py`）被 pytest 误收集导致假失败
 
+14. 开源发布与仓库治理
+    - 新仓库已发布为公开：`https://github.com/tytsxai/skylinepilot-mcp`
+    - Git 远程已规范化：`origin` 指向公开仓库，`upstream` 指向历史上游仓库
+    - 新增 GitHub Actions 工作流：`.github/workflows/ci.yml`
+    - README 增加开源状态徽章（CI / License / Repo）
+
 ---
 
 ## 待执行（下一轮）

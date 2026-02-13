@@ -59,6 +59,7 @@ skylinepilot-mcp/
 ├── tests/
 │   ├── unit/                    # 单元测试分层（迁移开始）
 │   └── integration/             # 集成测试分层（迁移开始）
+├── .github/workflows/ci.yml     # CI 流水线（pytest + py_compile）
 ├── pytest.ini                   # pytest 收敛到 tests/ 分层目录
 └── test_*.py                    # 测试脚本（尚未标准化分层）
 ```
@@ -212,6 +213,8 @@ MCP/Web Request
   - 核心域模块入口补齐
 - 新增：`pytest.ini`
   - pytest 默认只收集 `tests/` 分层测试，避免 legacy 手工脚本误收集
+- 新增：`.github/workflows/ci.yml`
+  - 开源仓库 CI 自动校验：pytest + py_compile
 - 新增：`tests/unit/test_mcp_services.py`
   - 覆盖 MCP 服务层输出与调用链基本行为
 - 新增：`src/skylinepilot/interfaces/web_api/routes/templates.py`

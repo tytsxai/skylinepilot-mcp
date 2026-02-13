@@ -6,6 +6,10 @@
 
 **让 Telegram 运营从“手工群发”进化为“系统化增长引擎”**
 
+[![CI](https://github.com/tytsxai/skylinepilot-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/tytsxai/skylinepilot-mcp/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-tytsxai%2Fskylinepilot--mcp-blue)](https://github.com/tytsxai/skylinepilot-mcp)
+
 > 核心功能不变，体验与商业表达全面升级：
 > 多账号管理 / 123+ MCP 工具 / 批量触达 / 定时任务 / AI 文案润色 / Web 控制台
 

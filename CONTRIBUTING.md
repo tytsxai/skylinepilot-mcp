@@ -57,7 +57,7 @@ Bug 报告应包含：
 
 功能请求应包含：
 - **用例描述** - 这个功能解决什么问题
-- ** proposed solution** - 您建议的实现方案
+- **建议方案** - 您建议的实现方案
 - **替代方案** - 您考虑过的其他方案
 - **附加信息** - 任何其他相关信息
 
@@ -115,8 +115,6 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 pip install -r requirements-dev.txt
 
-# 安装 pre-commit hooks
-pre-commit install
 ```
 
 ### 运行测试
@@ -125,10 +123,13 @@ pre-commit install
 # 运行所有测试
 pytest
 
-# 运行特定测试
-pytest tests/test_account_manager.py
+# 运行集成测试
+pytest tests/integration
 
-# 查看覆盖率
+# 运行单元测试
+pytest tests/unit
+
+# 查看覆盖率（可选）
 pytest --cov=. --cov-report=html
 ```
 
@@ -138,11 +139,9 @@ pytest --cov=. --cov-report=html
 # 格式化代码
 black .
 
-# 检查代码风格
-flake8
-
-# 类型检查
-mypy .
+# 按需运行静态检查（如果本地已安装）
+# flake8
+# mypy .
 ```
 
 ---
