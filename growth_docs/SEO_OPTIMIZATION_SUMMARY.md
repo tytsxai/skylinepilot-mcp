@@ -1,7 +1,7 @@
 # GitHub SEO 优化完成报告
 
 **优化日期**: 2026-01-03
-**项目**: Telegram MCP Complete
+**项目**: SkylinePilot MCP
 
 ---
 
@@ -68,14 +68,14 @@
 - 联系方式
 - 支持 SLA
 
-#### docs/GITHUB_TOPICS.md
+#### growth_docs/GITHUB_TOPICS.md
 - 推荐的 20 个核心 Topics
 - Topics 分类和优先级
 - SEO 优化建议
 - Topics 使用规则
 - 效果追踪方法
 
-#### docs/SOCIAL_MEDIA_TEMPLATE.md
+#### growth_docs/SOCIAL_MEDIA_TEMPLATE.md
 社交媒体分享模板：
 - Twitter/X（短版本和长版本）
 - LinkedIn 文章格式
@@ -243,7 +243,7 @@ git push origin v1.0.0
 
 1. 在 Settings 中启用 GitHub Pages
 2. 选择源为 main branch
-3. 使用 docs/ 或 root 目录
+3. 使用 growth_docs/ 或 root 目录
 
 ### 3. 添加 CI/CD
 
@@ -283,7 +283,7 @@ jobs:
 
 1. **推送到 GitHub**
    ```bash
-   git remote add origin https://github.com/yourusername/telegram-mcp-complete.git
+   git remote add origin https://github.com/yourusername/skylinepilot-mcp.git
    git push -u origin main
    ```
 
@@ -291,7 +291,7 @@ jobs:
 
 3. **创建 GitHub Release**（使用 v1.0.0 标签）
 
-4. **在社交媒体发布**（使用 docs/SOCIAL_MEDIA_TEMPLATE.md 中的模板）
+4. **在社交媒体发布**（使用 growth_docs/SOCIAL_MEDIA_TEMPLATE.md 中的模板）
 
 5. **监控流量**（在 GitHub Insights 查看）
 

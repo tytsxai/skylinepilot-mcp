@@ -1,4 +1,4 @@
-# Telegram MCP Complete - 系统验证报告
+# SkylinePilot MCP - 系统验证报告
 
 **验证时间**: 2026-01-02
 **版本**: 1.0
@@ -10,7 +10,7 @@
 
 ### 核心文件
 ```
-telegram-mcp-complete/
+skylinepilot-mcp/
 ├── main.py                  # MCP 服务器 (111KB)
 ├── dashboard.py             # FastAPI 后台 (27KB)
 ├── account_manager.py       # 账号管理 (28KB)
@@ -21,7 +21,7 @@ telegram-mcp-complete/
 ├── log_manager.py           # 日志管理 (4KB)
 ├── stats_tracker.py         # 统计追踪 (7KB)
 ├── batch_operations.py      # 批量操作 (9KB)
-└── static/dashboard.html    # Web 管理界面
+└── console_ui/dashboard.html    # Web 管理界面
 ```
 
 ### 依赖包
@@ -39,13 +39,13 @@ telegram-mcp-complete/
 ### 配置文件状态
 | 文件 | 状态 | 说明 |
 |------|------|------|
-| accounts/config.json | OK | 包含 1 个已登录账号 |
-| accounts/proxies.json | OK | 代理配置正常 |
-| accounts/templates.json | OK | 模板存储正常 |
-| accounts/schedules.json | OK | 定时任务存储正常 |
-| accounts/logs.json | OK | 操作日志正常 |
-| accounts/health.json | OK | 健康数据正常 |
-| accounts/stats.json | OK | 统计数据正常 |
+| runtime_data/config.json | OK | 包含 1 个已登录账号 |
+| runtime_data/proxies.json | OK | 代理配置正常 |
+| runtime_data/templates.json | OK | 模板存储正常 |
+| runtime_data/schedules.json | OK | 定时任务存储正常 |
+| runtime_data/logs.json | OK | 操作日志正常 |
+| runtime_data/health.json | OK | 健康数据正常 |
+| runtime_data/stats.json | OK | 统计数据正常 |
 
 ### 已登录账号
 - 账号 ID: account_1767280352227
@@ -129,7 +129,7 @@ telegram-mcp-complete/
 
 ### Dashboard 和 MCP 连接
 ```
-./accounts/config.json (共享账号存储)
+./runtime_data/config.json (共享账号存储)
          |
     +----+----+
     |         |
@@ -152,7 +152,7 @@ Port: 8080   117 个工具
 🌐 全局代理: 未设置
 🔧 独立代理: 0 个
 
-🌐 管理界面: http://localhost:8080/static/dashboard.html
+🌐 管理界面: http://localhost:8080/console/dashboard.html
 📡 API 文档: http://localhost:8080/docs
 🔌 WebSocket: ws://localhost:8080/ws
 ============================================================

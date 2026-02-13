@@ -10,7 +10,7 @@ from typing import List, Dict, Optional
 import re
 
 
-ACCOUNTS_DIR = "./accounts"
+ACCOUNTS_DIR = "./runtime_data"
 TEMPLATE_FILE = os.path.join(ACCOUNTS_DIR, "templates.json")
 
 

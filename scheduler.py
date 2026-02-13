@@ -16,7 +16,7 @@ from template_manager import template_manager
 from log_manager import log_manager
 
 
-ACCOUNTS_DIR = "./accounts"
+ACCOUNTS_DIR = "./runtime_data"
 SCHEDULE_FILE = os.path.join(ACCOUNTS_DIR, "schedules.json")
 
 

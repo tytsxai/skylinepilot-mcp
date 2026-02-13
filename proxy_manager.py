@@ -11,7 +11,7 @@ from typing import Dict, List, Optional, Any
 import aiohttp
 
 
-ACCOUNTS_DIR = "./accounts"
+ACCOUNTS_DIR = "./runtime_data"
 PROXIES_FILE = os.path.join(ACCOUNTS_DIR, "proxies.json")
 
 

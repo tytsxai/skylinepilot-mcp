@@ -22,7 +22,7 @@
 python3 dashboard.py
 ```
 
-访问 http://localhost:8080/static/dashboard.html
+访问 http://localhost:8080/console/dashboard.html
 
 ### 2. 使用 Web UI 测试
 

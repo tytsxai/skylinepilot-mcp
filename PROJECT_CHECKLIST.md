@@ -1,4 +1,4 @@
-# Telegram MCP Complete - 最终完整清单
+# SkylinePilot MCP - 最终完整清单
 
 **检查日期**: 2026-01-02
 **项目状态**: ✅ 完全就绪
@@ -84,13 +84,13 @@
 | VERIFICATION_REPORT.md | 6.0 KB | 系统验证报告 | ✅ |
 | FINAL_AUDIT_REPORT.md | 9.0 KB | 最终检查报告 | ✅ |
 | MISSING_FEATURES.md | 10 KB | 未实现功能列表 | ℹ️ |
-| docs/PHONE_LOGIN_TEST.md | 4.5 KB | 手机号登录测试指南 | ✅ |
+| growth_docs/PHONE_LOGIN_TEST.md | 4.5 KB | 手机号登录测试指南 | ✅ |
 
 ### 前端文件 (1 个)
 
 | 文件 | 大小 | 说明 | 状态 |
 |------|------|------|------|
-| static/dashboard.html | 101 KB | Vue.js 3 Web 界面 | ✅ |
+| console_ui/dashboard.html | 101 KB | Vue.js 3 Web 界面 | ✅ |
 
 ### 测试文件 (5 个)
 
@@ -106,7 +106,7 @@
 
 | 目录 | 文件数 | 说明 | 状态 |
 |------|--------|------|------|
-| accounts/ | 6 | 账号数据存储 | ✅ |
+| runtime_data/ | 6 | 账号数据存储 | ✅ |
 
 ---
 
@@ -159,8 +159,8 @@
 |----------|------|----------|
 | .env | ✅ | .gitignore |
 | .telegram_session | ✅ | .gitignore |
-| accounts/config.json | ✅ | .gitignore |
-| accounts/*.json | ✅ | .gitignore |
+| runtime_data/config.json | ✅ | .gitignore |
+| runtime_data/*.json | ✅ | .gitignore |
 | *.log | ✅ | .gitignore |
 
 ### 安全特性
@@ -191,9 +191,9 @@
 
 ```
 ✅ 版本声明: 3.8
-✅ 服务配置: telegram-mcp
+✅ 服务配置: skylinepilot-mcp
 ✅ 端口映射: 8080:8080
-✅ 数据卷: ./accounts:/app/accounts
+✅ 数据卷: ./runtime_data:/app/runtime_data
 ✅ 环境变量: 已配置
 ✅ 重启策略: unless-stopped
 ✅ 网络配置: bridge
@@ -262,7 +262,7 @@ pip install -r requirements.txt
 # 启动 Dashboard
 python3 dashboard.py
 
-# 访问 http://localhost:8080/static/dashboard.html
+# 访问 http://localhost:8080/console/dashboard.html
 ```
 
 ### 方式二：Docker 部署
@@ -271,7 +271,7 @@ python3 dashboard.py
 # 一键启动
 docker-compose up -d
 
-# 访问 http://localhost:8080/static/dashboard.html
+# 访问 http://localhost:8080/console/dashboard.html
 ```
 
 ---
@@ -322,7 +322,7 @@ git init
 git add .
 
 # 3. 提交
-git commit -m "Release v1.0: Telegram MCP Complete
+git commit -m "Release v1.0: SkylinePilot MCP
 
 Features:
 - 117 MCP tools for Telegram automation
@@ -339,7 +339,7 @@ Docs:
 - Bug fixes and verification reports"
 
 # 4. 添加远程仓库
-git remote add origin https://github.com/yourusername/telegram-mcp-complete.git
+git remote add origin https://github.com/yourusername/skylinepilot-mcp.git
 
 # 5. 推送
 git push -u origin main

@@ -26,7 +26,7 @@
 - `template_manager.py:68-77` - 同时保存 `id` 和 `template_id` 字段
 - `template_manager.py:82-89` - `get_template` 方法确保返回 `template_id` 字段
 - `template_manager.py:91-110` - `list_templates` 方法确保返回所有模板都包含 `template_id` 字段
-- `static/dashboard.html:868,1318` - 前端同时支持 `template_id` 和 `id` 字段
+- `console_ui/dashboard.html:868,1318` - 前端同时支持 `template_id` 和 `id` 字段
 
 ### 4. 日志功能显示错误及无法清空问题 ✅
 **问题描述**:
@@ -37,9 +37,9 @@
 **修复内容**:
 - `log_manager.py:50-58` - 同时保存 `time` 和 `timestamp` 字段
 - `log_manager.py:86-89` - 返回最新记录而非最旧
-- `static/dashboard.html:570` - 清空按钮调用 `clearLogs` 方法
-- `static/dashboard.html:1007-1016` - 添加 `clearLogs` 方法调用 `/api/logs/clear`
-- `static/dashboard.html:577` - 移除重复的 `reverse()`
+- `console_ui/dashboard.html:570` - 清空按钮调用 `clearLogs` 方法
+- `console_ui/dashboard.html:1007-1016` - 添加 `clearLogs` 方法调用 `/api/logs/clear`
+- `console_ui/dashboard.html:577` - 移除重复的 `reverse()`
 
 ### 5. 统计与健康监控未接入 ✅
 **问题描述**:
@@ -93,7 +93,7 @@ pip install -r requirements.txt
 python3 dashboard.py
 
 # 访问管理界面
-# http://localhost:8080/static/dashboard.html
+# http://localhost:8080/console/dashboard.html
 ```
 
 ## API 端点
@@ -158,7 +158,7 @@ python3 dashboard.py
 
 ## 配置文件
 
-所有配置文件存储在 `./accounts/` 目录：
+所有配置文件存储在 `./runtime_data/` 目录：
 - `config.json` - 账号配置
 - `proxies.json` - 代理配置
 - `templates.json` - 消息模板

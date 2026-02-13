@@ -1,21 +1,21 @@
 # ============================================================
-# Telegram MCP Complete - Docker Compose 配置
+# SkylinePilot MCP - Docker Compose 配置
 # ============================================================
 # 使用方式: docker-compose up -d
 
 version: '3.8'
 
 services:
-  telegram-mcp:
+  skylinepilot-mcp:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: telegram-mcp-complete
+    container_name: skylinepilot-mcp
     ports:
       - "8080:8080"
     volumes:
       # 持久化账号数据
-      - ./accounts:/app/accounts
+      - ./runtime_data:/app/runtime_data
       # 可选：挂载自定义配置
       # - ./.env:/app/.env
     environment:
@@ -29,7 +29,7 @@ services:
       - LOG_LEVEL=${LOG_LEVEL:-INFO}
     restart: unless-stopped
     networks:
-      - telegram-mcp-network
+      - skylinepilot-network
     healthcheck:
       test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8080/api/accounts').read()"]
       interval: 30s
@@ -40,7 +40,7 @@ services:
   # 可选：添加 Nginx 反向代理
   # nginx:
   #   image: nginx:alpine
-  #   container_name: telegram-mcp-nginx
+  #   container_name: skylinepilot-nginx
   #   ports:
   #     - "80:80"
   #     - "443:443"
@@ -48,13 +48,13 @@ services:
   #     - ./nginx.conf:/etc/nginx/nginx.conf:ro
   #     - ./ssl:/etc/nginx/ssl:ro
   #   depends_on:
-  #     - telegram-mcp
+  #     - skylinepilot-mcp
   #   restart: unless-stopped
   #   networks:
-  #     - telegram-mcp-network
+  #     - skylinepilot-network
 
 networks:
-  telegram-mcp-network:
+  skylinepilot-network:
     driver: bridge
 
 # ============================================================
@@ -74,6 +74,6 @@ networks:
 #    docker-compose up -d --build
 #
 # 5. 访问 Dashboard：
-#    http://localhost:8080/static/dashboard.html
+#    http://localhost:8080/console/dashboard.html
 #
 # ============================================================

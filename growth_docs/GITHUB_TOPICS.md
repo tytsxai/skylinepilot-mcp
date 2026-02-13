@@ -1,6 +1,6 @@
 # GitHub Topics 标签优化指南
 
-本文档包含了为 Telegram MCP Complete 项目优化的 GitHub Topics 标签。
+本文档包含了为 SkylinePilot MCP 项目优化的 GitHub Topics 标签。
 
 ---
 

@@ -12,7 +12,7 @@ from account_manager import account_manager
 from proxy_manager import proxy_manager
 
 
-ACCOUNTS_DIR = "./accounts"
+ACCOUNTS_DIR = "./runtime_data"
 HEALTH_FILE = os.path.join(ACCOUNTS_DIR, "health.json")
 
 

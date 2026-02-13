@@ -10,7 +10,7 @@ from typing import List, Dict, Optional
 from collections import deque
 
 
-ACCOUNTS_DIR = "./accounts"
+ACCOUNTS_DIR = "./runtime_data"
 LOG_FILE = os.path.join(ACCOUNTS_DIR, "logs.json")
 MAX_LOGS = 1000  # 最多保留1000条日志
 

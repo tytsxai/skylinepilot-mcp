@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram 多账号管理</title>
+    <title>SkylinePilot MCP 控制台</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <style>
@@ -316,7 +316,7 @@
 <body>
     <div id="app">
         <div class="header">
-            <h1>📱 Telegram 多账号管理</h1>
+            <h1>🚀 SkylinePilot MCP 增长控制台</h1>
             <div class="header-stats">
                 <span>📊 总账号: {{ accounts.length }}</span>
                 <span>🟢 在线: {{ onlineCount }}</span>
@@ -443,7 +443,7 @@
                         </div>
                     </div>
                     <div v-else>
-                        <p style="color: #999; margin-bottom: 15px;">设置全局代理后，所有账号默认使用此代理连接Telegram</p>
+                        <p style="color: #999; margin-bottom: 15px;">设置全局代理后，所有账号默认使用此代理连接 Telegram，提升稳定性与运营连续性</p>
                         <div class="form-row">
                             <div class="form-group">
                                 <label>协议</label>
@@ -822,7 +822,7 @@
                 <!-- 二维码登录 -->
                 <div v-else-if="loginMode === 'qr'">
                     <h2 style="cursor: pointer;" @click="loginMode = 'select'">⬅ 扫码登录</h2>
-                    <p class="subtitle">使用 Telegram 扫描二维码添加账号</p>
+                    <p class="subtitle">使用 Telegram 扫码接入账号，快速进入自动化运营模式</p>
 
                     <div class="qr-container">
                         <img v-if="qrCode" :src="qrCode" alt="QR Code">

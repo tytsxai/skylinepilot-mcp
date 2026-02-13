@@ -1,4 +1,4 @@
-# Telegram MCP Complete - 最终检查报告
+# SkylinePilot MCP - 最终检查报告
 
 **检查时间**: 2026-01-02
 **项目状态**: ✅ 生产就绪
@@ -80,8 +80,8 @@
 ```
 ✅ .env - 已保护
 ✅ .telegram_session - 已保护
-✅ accounts/config.json - 已保护
-✅ accounts/*.json - 已保护
+✅ runtime_data/config.json - 已保护
+✅ runtime_data/*.json - 已保护
 ✅ *.log - 已保护
 ```
 
@@ -100,7 +100,7 @@
 | docker-compose.yml | ✅ | 一键部署 |
 | BUGFIXES.md | ✅ | 8 个 bug 修复记录 |
 | VERIFICATION_REPORT.md | ✅ | 系统验证报告 |
-| docs/PHONE_LOGIN_TEST.md | ✅ | 手机号登录测试指南 |
+| growth_docs/PHONE_LOGIN_TEST.md | ✅ | 手机号登录测试指南 |
 
 ### README.md 包含内容
 
@@ -143,9 +143,9 @@
 ✅ 启动命令: python3 dashboard.py
 
 # docker-compose.yml 检查
-✅ 服务名称: telegram-mcp
+✅ 服务名称: skylinepilot-mcp
 ✅ 端口映射: 8080:8080
-✅ 数据卷: ./accounts:/app/accounts
+✅ 数据卷: ./runtime_data:/app/runtime_data
 ✅ 环境变量: 已配置
 ✅ 重启策略: unless-stopped
 ✅ 网络配置: bridge

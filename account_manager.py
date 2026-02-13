@@ -17,7 +17,7 @@ import base64
 
 API_ID = 2040
 API_HASH = "b18441a1ff607e10a989891a5462e627"
-ACCOUNTS_DIR = "./accounts"
+ACCOUNTS_DIR = "./runtime_data"
 CONFIG_FILE = os.path.join(ACCOUNTS_DIR, "config.json")
 
 

@@ -10,7 +10,7 @@ from typing import Dict, List
 from collections import defaultdict
 
 
-ACCOUNTS_DIR = "./accounts"
+ACCOUNTS_DIR = "./runtime_data"
 STATS_FILE = os.path.join(ACCOUNTS_DIR, "stats.json")
 
 

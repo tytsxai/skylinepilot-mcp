@@ -3,9 +3,9 @@ requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "telegram-mcp-complete"
+name = "skylinepilot-mcp"
 version = "1.0.0"
-description = "Complete Telegram MCP Server with QR Code Login"
+description = "SkylinePilot MCP - Telegram automation console for growth, operations and campaign execution"
 authors = [{name = "User"}]
 license = {text = "MIT"}
 requires-python = ">=3.10"
@@ -17,10 +17,12 @@ dependencies = [
     "playwright>=1.40.0",
     "aiohttp>=3.9.0",
     "nest-asyncio>=1.6.0",
+    "croniter>=6.0.0",
 ]
 
 [project.scripts]
 telegram-mcp = "main:main"
+skylinepilot = "main:main"
 
 [tool.setuptools]
 py-modules = ["main", "web_login", "session_manager"]

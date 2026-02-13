@@ -1,5 +1,5 @@
 # ============================================================
-# Telegram MCP Complete - Dockerfile
+# SkylinePilot MCP - Dockerfile
 # ============================================================
 # 用于构建 Docker 镜像，支持 Dashboard 和 MCP 服务器
 
@@ -27,11 +27,11 @@ RUN pip install --upgrade pip && \
 
 # 复制项目代码
 COPY *.py ./
-COPY static ./static/
+COPY console_ui ./console_ui/
 COPY .env.example .env
 
 # 创建数据目录
-RUN mkdir -p /app/accounts
+RUN mkdir -p /app/runtime_data
 
 # 暴露端口
 EXPOSE 8080

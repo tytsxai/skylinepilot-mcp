@@ -34,9 +34,9 @@ telegram_session.txt
 mcp_errors.log
 
 # 账号数据（包含敏感 Session）
-accounts/config.json
-accounts/*.json
-!accounts/.gitkeep
+runtime_data/config.json
+runtime_data/*.json
+!runtime_data/.gitkeep
 
 # Dashboard 日志
 dashboard.log

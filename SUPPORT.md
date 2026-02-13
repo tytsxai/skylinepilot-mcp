@@ -1,6 +1,6 @@
 # 获取支持
 
-欢迎使用 Telegram MCP Complete！这里有各种获取帮助的方式。
+欢迎使用 SkylinePilot MCP！这里有各种获取帮助的方式。
 
 ## 📚 文档
 
@@ -17,7 +17,7 @@
 
 ### GitHub Discussions
 
-对于使用问题、功能讨论和一般疑问，请使用 [GitHub Discussions](https://github.com/yourusername/telegram-mcp-complete/discussions)：
+对于使用问题、功能讨论和一般疑问，请使用 [GitHub Discussions](https://github.com/yourusername/skylinepilot-mcp/discussions)：
 
 - **使用问题** - 如何使用某个功能
 - **功能讨论** - 讨论新功能想法
@@ -25,10 +25,10 @@
 
 ### GitHub Issues
 
-对于 Bug 报告和具体的功能请求，请使用 [GitHub Issues](https://github.com/yourusername/telegram-mcp-complete/issues)：
+对于 Bug 报告和具体的功能请求，请使用 [GitHub Issues](https://github.com/yourusername/skylinepilot-mcp/issues)：
 
-- 🐛 [报告 Bug](https://github.com/yourusername/telegram-mcp-complete/issues/new?template=bug_report.md)
-- ✨ [功能请求](https://github.com/yourusername/telegram-mcp-complete/issues/new?template=feature_request.md)
+- 🐛 [报告 Bug](https://github.com/yourusername/skylinepilot-mcp/issues/new?template=bug_report.md)
+- ✨ [功能请求](https://github.com/yourusername/skylinepilot-mcp/issues/new?template=feature_request.md)
 
 ---
 
@@ -52,7 +52,7 @@ A: 可以！项目内置了测试凭证，可以直接使用。
 
 **Q: 如何配置代理？**
 
-在 `accounts/proxies.json` 中配置：
+在 `runtime_data/proxies.json` 中配置：
 
 ```json
 {
@@ -137,7 +137,7 @@ DASHBOARD_HOST=0.0.0.0
 
 ### MCP 工具列表
 
-详细工具文档：[完整工具列表](docs/TOOLS.md)
+详细工具文档：[完整工具列表](growth_docs/TOOLS.md)
 
 主要类别：
 - 💬 聊天管理 (6 个工具)
@@ -173,7 +173,7 @@ DASHBOARD_HOST=0.0.0.0
 ### 社交媒体
 
 关注我们的更新：
-- GitHub: [https://github.com/yourusername/telegram-mcp-complete](https://github.com/yourusername/telegram-mcp-complete)
+- GitHub: [https://github.com/yourusername/skylinepilot-mcp](https://github.com/yourusername/skylinepilot-mcp)
 
 ---
 
@@ -235,4 +235,4 @@ DASHBOARD_HOST=0.0.0.0
 
 ---
 
-感谢您使用 Telegram MCP Complete！🎉
+感谢您使用 SkylinePilot MCP！🎉

@@ -1,6 +1,6 @@
 # 贡献指南
 
-感谢您考虑为 Telegram MCP Complete 做出贡献！我们欢迎任何形式的贡献。
+感谢您考虑为 SkylinePilot MCP 做出贡献！我们欢迎任何形式的贡献。
 
 ## 📋 目录
 
@@ -65,7 +65,7 @@ Bug 报告应包含：
 
 1. **Fork 仓库**
    ```bash
-   git clone https://github.com/yourusername/telegram-mcp-complete.git
+   git clone https://github.com/yourusername/skylinepilot-mcp.git
    ```
 
 2. **创建分支**
@@ -104,8 +104,8 @@ Bug 报告应包含：
 
 ```bash
 # 克隆仓库
-git clone https://github.com/yourusername/telegram-mcp-complete.git
-cd telegram-mcp-complete
+git clone https://github.com/yourusername/skylinepilot-mcp.git
+cd skylinepilot-mcp
 
 # 创建虚拟环境
 python3 -m venv venv
@@ -249,9 +249,9 @@ Closes #123
 
 | 类型 | 位置 |
 |------|------|
-| Bug 报告 | [GitHub Issues](https://github.com/yourusername/telegram-mcp-complete/issues) |
-| 功能请求 | [GitHub Issues](https://github.com/yourusername/telegram-mcp-complete/issues) |
-| 使用问题 | [GitHub Discussions](https://github.com/yourusername/telegram-mcp-complete/discussions) |
+| Bug 报告 | [GitHub Issues](https://github.com/yourusername/skylinepilot-mcp/issues) |
+| 功能请求 | [GitHub Issues](https://github.com/yourusername/skylinepilot-mcp/issues) |
+| 使用问题 | [GitHub Discussions](https://github.com/yourusername/skylinepilot-mcp/discussions) |
 | PR 相关 | 在 PR 中评论 |
 
 ### Issue 模板
@@ -295,7 +295,7 @@ Closes #123
 如果您有任何问题：
 
 - 查看 [文档](README.md)
-- 在 [Discussions](https://github.com/yourusername/telegram-mcp-complete/discussions) 中提问
+- 在 [Discussions](https://github.com/yourusername/skylinepilot-mcp/discussions) 中提问
 - 联系维护者
 
 ---
