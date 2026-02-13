@@ -57,6 +57,7 @@ skylinepilot-mcp/
 │           ├── profile_ops.py   # 资料工具域数据访问
 │           └── profile_service.py # 资料工具域服务编排
 ├── tests/
+│   ├── conftest.py              # 测试导入路径引导（注入仓库根与 src 到 sys.path）
 │   ├── unit/                    # 单元测试分层（迁移开始）
 │   └── integration/             # 集成测试分层（迁移开始）
 ├── .github/workflows/ci.yml     # CI 流水线（pytest + py_compile）
@@ -151,6 +152,8 @@ MCP/Web Request
 
 ## 5) 本次文档变更记录
 
+- 新增：`tests/conftest.py`
+  - 统一 pytest 导入路径引导，修复 `ModuleNotFoundError: src / marketing_engine` 的测试收集失败
 - 更新：文档质量巡检（2026-02-13）
   - 统一仓库链接占位符：`yourusername` -> `tytsxai`
   - 修复 `SUPPORT.md` 的失效文档引用与联系方式占位符
