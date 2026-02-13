@@ -137,7 +137,7 @@
 ### 本地启动
 
 ```bash
-git clone https://github.com/you922/skylinepilot-mcp.git
+git clone https://github.com/tytsxai/skylinepilot-mcp.git
 cd skylinepilot-mcp
 pip install -r requirements.txt
 python dashboard.py

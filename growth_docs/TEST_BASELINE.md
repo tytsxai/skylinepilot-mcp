@@ -32,9 +32,9 @@
 
 说明：
 - 通过 `pytest.ini`，默认只收集 `tests/` 分层测试目录。
-- 当前结果：`13 passed`
+- 当前结果：`11 passed`
 
 ## 额外校验
 
-- `py_compile`：49 个 Python 文件，0 语法错误。
+- `py_compile`：64 个 Python 文件，0 语法错误。
 - `dashboard.app` 导入成功，关键路由已挂载（accounts/templates/marketing）。
