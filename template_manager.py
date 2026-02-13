@@ -67,7 +67,8 @@ class TemplateManager:
 
         self.templates[template_id] = {
             "id": template_id,
-            "template_id": template_id,  # 前端使用的字段名
+            # 兼容约束：前端和部分 API 仍以 template_id 读取，不能只保留 id。
+            "template_id": template_id,
             "name": name,
             "content": content,
             "category": category,

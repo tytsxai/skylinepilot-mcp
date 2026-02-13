@@ -100,6 +100,8 @@ class TaskScheduler:
             return False
 
         # 统一账号列表参数（兼容 account_ids 和 accounts）
+        # 注意：dashboard 与历史数据仍可能使用 account_ids。
+        # 这里不能直接删除兼容逻辑，否则会出现“前端创建成功但执行为空账号”的回归问题。
         accounts_list = account_ids or accounts
 
         self.schedules[schedule_id] = {

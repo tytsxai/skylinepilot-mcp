@@ -50,7 +50,8 @@ class LogManager:
         now_iso = datetime.now().isoformat()
         log = {
             "time": now_iso,
-            "timestamp": now_iso,  # 前端使用的字段名
+            # 兼容约束：前端列表与部分旧脚本使用 timestamp，不能移除。
+            "timestamp": now_iso,
             "action": action,
             "account": account,
             "detail": detail,
